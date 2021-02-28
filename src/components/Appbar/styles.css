@@ -1,0 +1,48 @@
+#appbar {
+  background-color: blueviolet;
+  min-width: 745px;
+  width: 100%;
+  height: 10%;
+  max-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+#appbar img {
+  width: 70px;
+}
+
+#search {
+  min-width: 315px;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0px 30px;
+}
+
+#search input {
+  width: 100%;
+  border: 1px #000 solid;
+  border-radius: 10px;
+  outline: none;
+  font-size: large;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+#search input:focus {
+  border: 3px green solid;
+}
+
+#search svg {
+  position: absolute;
+  right: 10px;
+}
+
+input:focus + svg {
+  color: green;
+}
