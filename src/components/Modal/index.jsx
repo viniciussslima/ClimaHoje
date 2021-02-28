@@ -4,13 +4,11 @@ import "./styles.css";
 
 function Modal({ title, content, options, onClose }) {
   return (
-    <div className="modal-container">
-      <div className="modal-content">
-        <AiFillCloseCircle size={30} onClick={onClose} />
-        <h2>{title}</h2>
-        <p>{content}</p>
-        <div className="options">{options}</div>
-      </div>
+    <div className="modal-content">
+      <AiFillCloseCircle size={30} onClick={onClose} />
+      <h2>{title}</h2>
+      <p>{content}</p>
+      <div className="options">{options}</div>
     </div>
   );
 }
