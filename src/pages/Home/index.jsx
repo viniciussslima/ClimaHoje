@@ -3,6 +3,7 @@ import Appbar from "../../components/Appbar";
 import Card from "../../components/Card";
 import { FaTemperatureHigh, FaArrowDown, FaArrowUp } from "react-icons/fa";
 import { WiHumidity, WiStrongWind } from "react-icons/wi";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import { useWeather } from "../../contexts/weather";
 import "./styles.css";
 
@@ -99,15 +100,25 @@ function Home() {
                 <p>Pressão: {weather.main.pressure} atm</p>
               </Card>
             </div>
-            <div
+            <div className="map">
+              <MapContainer
+                key={count}
               style={{
-                gridColumnStart: 2,
-                gridColumnEnd: 2,
-                gridRowStart: 1,
-                gridRowEnd: 2,
+                  height: "100%",
+                  width: "100%",
+                  maxWidth: 1000,
+                  margin: "auto auto",
               }}
+                center={[weather.coord.lat, weather.coord.lon]}
+                zoom={10}
+                scrollWheelZoom={true}
             >
-              <Card style={{ width: "80%", height: "100%" }}></Card>
+                <TileLayer
+                  attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                <Marker position={[weather.coord.lat, weather.coord.lon]} />
+              </MapContainer>
             </div>
           </div>
         </div>
