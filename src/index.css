@@ -8,6 +8,12 @@
 html,
 body,
 #root {
-  min-width: 610px;
+  min-width: 1024px;
   background-color: #e5e5e5;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
