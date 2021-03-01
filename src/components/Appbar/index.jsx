@@ -17,6 +17,7 @@ function Appbar() {
 
   async function search(event) {
     event.preventDefault();
+    setOpenModal(false);
     try {
       let response = await API.get("weather", {
         params: {
