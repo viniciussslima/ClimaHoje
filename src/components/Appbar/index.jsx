@@ -27,9 +27,10 @@ function Appbar() {
         },
       });
 
+      setCity("");
+
       setWeather(response.data);
     } catch (err) {
-      setWeather(null);
       setModalTitle("ERROR");
       if (err.response.status === 404) {
         setModalContent("Cidade não encontrada");
