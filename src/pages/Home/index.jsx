@@ -9,12 +9,18 @@ import {
 } from "react-icons/fa";
 import { WiHumidity, WiStrongWind } from "react-icons/wi";
 import { TiWaves } from "react-icons/ti";
-import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, useMap } from "react-leaflet";
 import { useWeather } from "../../contexts/weather";
 import "./styles.css";
 
 function Home() {
-  const { weather, count } = useWeather();
+  const { weather } = useWeather();
+
+  function ChangeView({ center, zoom }) {
+    const map = useMap();
+    map.setView(center, zoom);
+    return null;
+  }
 
   return (
     <div className="container">
@@ -119,7 +125,6 @@ function Home() {
             </div>
             <div className="map">
               <MapContainer
-                key={count}
                 style={{
                   height: "100%",
                   width: "100%",
@@ -130,6 +135,10 @@ function Home() {
                 zoom={10}
                 scrollWheelZoom={true}
               >
+                <ChangeView
+                  center={[weather.coord.lat, weather.coord.lon]}
+                  zoom={10}
+                />
                 <TileLayer
                   attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
