@@ -10,7 +10,7 @@ Site para mostrar o clima atual em qualquer cidade
 
 ## Versão online
 
-- <a href="https://clima-hoje.herokuapp.com/"> https://clima-hoje.herokuapp.com/ </a>
+- <a href="https://clima-hoje.vercel.app/"> https://clima-hoje.vercel.app/ </a>
 
 ## Variáveis de ambiente
 
