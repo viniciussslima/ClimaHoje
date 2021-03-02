@@ -32,12 +32,7 @@ function Home() {
               <div className="principal-card">
                 <Card>
                   <div className="principal-card-grid">
-                    <div
-                      style={{
-                        gridColumnStart: 1,
-                        gridColumnEnd: 1,
-                      }}
-                    >
+                    <div className="principal-card-grid-weather">
                       <h2 className="name">Clima em {weather.name}</h2>
                       <img
                         className="principal-card-icon"
@@ -46,14 +41,7 @@ function Home() {
                       />
                       <p>{weather.weather[0].description}</p>
                     </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
+                    <div className="principal-card-grid-wind">
                       <WiStrongWind size={30} />
                       <p style={{ textTransform: "lowercase" }}>
                         {weather.wind.speed} m/s
@@ -66,10 +54,8 @@ function Home() {
                 <div className="adjacent-card">
                   <Card
                     style={{
-                      width: "50%",
-                      maxWidth: 300,
+                      width: "100%",
                       height: "100%",
-                      maxHeight: 300,
                       display: "grid",
                       gridTemplateColumns: "1fr 1fr",
                       gridTemplateRows: "1fr 1fr 1fr",
@@ -93,10 +79,8 @@ function Home() {
                 <div className="adjacent-card">
                   <Card
                     style={{
-                      width: "50%",
-                      maxWidth: 300,
+                      width: "100%",
                       height: "100%",
-                      maxHeight: 300,
                       display: "grid",
                       gridTemplateColumns: "1fr 1fr",
                       gridTemplateRows: "1fr 1fr 1fr",
@@ -127,9 +111,6 @@ function Home() {
               <MapContainer
                 style={{
                   height: "100%",
-                  width: "100%",
-                  maxWidth: 1000,
-                  margin: "auto auto",
                 }}
                 center={[weather.coord.lat, weather.coord.lon]}
                 zoom={10}

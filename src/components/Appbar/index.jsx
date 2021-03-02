@@ -45,7 +45,7 @@ function Appbar() {
   return (
     <>
       <div id="appbar">
-        <img src={logo} alt="Logo do ClimaHoje" />
+        <img src={logo} alt="Logo do ClimaHoje" className="logo" />
         <form id="search" onSubmit={search}>
           <input
             type="text"
@@ -53,7 +53,7 @@ function Appbar() {
             value={city}
             onChange={(event) => setCity(event.target.value)}
           />
-          <BiSearchAlt size={30} />
+          <BiSearchAlt />
         </form>
       </div>
       {openModal ? (
