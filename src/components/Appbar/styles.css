@@ -1,9 +1,7 @@
 #appbar {
   background-color: blueviolet;
   width: 100%;
-  min-height: 100px;
-  height: 10%;
-  max-height: 150px;
+  height: 125px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,6 +47,9 @@ input:focus + svg {
 }
 
 @media (max-width: 470px) {
+  #appbar {
+    height: 100px;
+  }
   #search {
     margin: 0px 20px;
   }
