@@ -19,8 +19,9 @@
 
 @media (max-width: 980px) {
   .modal-content {
-    width: 30%;
     min-width: 205px;
+    width: 30%;
+    min-height: 167px;
     height: 30%;
     top: 50%;
     left: 0;
