@@ -8,7 +8,6 @@ function Modal({ title, content, options, onClose }) {
       <AiFillCloseCircle size={30} onClick={onClose} />
       <h2>{title}</h2>
       <p>{content}</p>
-      <div className="options">{options}</div>
     </div>
   );
 }
